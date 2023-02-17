@@ -104,13 +104,13 @@ section.about {
 
 .about h2 {
     font-size: 2.5rem;
-    color: #000;
+    color: #ffffff;
     margin-bottom: 2rem;
 }
 
 .about p {
     font-size: 1.2rem;
-    color: #333;
+    color: #7e7c7c;
     line-height: 1.5;
 }
 
@@ -138,7 +138,7 @@ section.services {
 .services ul li {
     margin: 0 2rem;
     font-size: 1.2rem;
-    color: #333;
+    color: #7e7c7c;
 }
 
 /* Projects styles */
@@ -155,26 +155,27 @@ section.projects {
 
 .project-card {
     flex: 0 1 30%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
     background-color: #2e2e2e;
     color: #ffffff;
 }
 
 .project-card img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .project-card h3 {
     font-size: 1.5rem;
     margin: 1rem 0;
-    color: #000;
+    color: #9f9b9b;
 }
 
 .project-card p {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.5;
-    color: #333;
+    color: #9f9b9b;
     margin-bottom: 1rem;
 }
 
@@ -187,11 +188,13 @@ section.projects {
     text-align: center;
     text-transform: uppercase;
     margin-top: 1rem;
+    border-radius: 15px;
+
     transition: background-color 0.3s ease;
 }
 
 .project-card .btn:hover {
-    background-color: #b5070f;
+    background-color: #0772b5;
 }
 
 /* Contact styles */
