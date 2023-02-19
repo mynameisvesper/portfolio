@@ -326,6 +326,10 @@ contact form #btnSubmit:hover {
         margin-left: 10;
         margin-bottom: 1rem;
     }
+    body {
+        font-size: 16px;
+      }
+    
 }
 
 
