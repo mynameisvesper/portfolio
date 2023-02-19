@@ -8,7 +8,7 @@
 /* Global styles */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 23px;
+    font-size: 20px;
     line-height: 1.5;
     background-color: #1a1a1a;
     color: #ffffff;
@@ -23,7 +23,10 @@ ul {
     list-style: none;
 }
 
-h1,
+h1 {
+    line-height: 1.2em;
+  }
+
 h2,
 h3 {
     margin-bottom: 1rem;
@@ -315,6 +318,12 @@ contact form #btnSubmit:hover {
     background-color: #0772b5 !important;
     color: #fff !important;
 }
+
+@media (max-width: 767px) {
+    h1 {
+      font-size: 20px;
+    }
+  }
 
 @media screen and (max-width: 600px) {
     nav ul {
