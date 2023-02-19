@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Portfolio Website</title>
@@ -25,7 +26,7 @@
     <div class="header-content">
       <h1>BIENVENUE</h1>
       <p>안녕하세요 저는 고객 서비스 경험을 바탕으로<br>성장하고 싶은 개발자 한주호입니다.</p>
-      <a href="#" class="btn">View my work</a>
+      <a href="#projects" class="btn">View my work</a>
     </div>
   </section>
 
@@ -80,8 +81,8 @@
   <section id="contact" class="contact">
     <div class="container">
       <h2>Contact Me</h2>
-      <form id="emailForm" class="gform" method="POST" data-email="youremail@example.com"
-        action="https://script.google.com/macros/s/AKfycbyHsJGlns8l7V9acvLlJf0ze-cjK8cAe26_mXi0/exec">
+      <form id="emailForm" class="gform" method="POST" data-email="gkswngh14@gmail.com"
+        action="https://script.google.com/macros/s/AKfycbwPcsT7WkCxWA9pq7cwlRaBoCPzuIFghgbPEglRbPMR9selX2iu1Vmt0tbmXsHXiLcF/exec">
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
@@ -105,137 +106,12 @@
               <button id="btnSubmit" class="btn btn-primary" type="submit">Send Message</button>
             </div>
           </div>
-        </div>
-        <div style="display:none" class="thankyou_message">
-          <h2><em>Thanks</em> for contacting us! We will get back to you soon!</h2>
-        </div>
+          <div style="display:none" class="thankyou_message">
+            <h3><em>감사합니다!</em>
+              </h6> 메시지가 성공적으로 전달되었습니다. </h6>
+          </div>
+
       </form>
-    </div>
-  </section>
-
-  <script type="text/javascript">
-    (function () {
-      // get all data in form and return object
-      function getFormData(form) {
-        var elements = form.elements;
-        var honeypot;
-
-        var fields = Object.keys(elements).filter(function (k) {
-          if (elements[k].name === "honeypot") {
-            honeypot = elements[k].value;
-            return false;
-          }
-          return true;
-        }).map(function (k) {
-          if (elements[k].name !== undefined) {
-            return elements[k].name;
-            // special case for Edge's html collection
-          } else if (elements[k].length > 0) {
-            return elements[k].item(0).name;
-          }
-        }).filter(function (item, pos, self) {
-          return self.indexOf(item) == pos && item;
-        });
-
-        var formData = {};
-        fields.forEach(function (name) {
-          var element = elements[name];
-
-          // singular form elements just have one value
-          formData[name] = element.value;
-
-          // when our element has multiple items, get their values
-          if (element.length) {
-            var data = [];
-            for (var i = 0; i < element.length; i++) {
-              var item = element.item(i);
-              if (item.checked || item.selected) {
-                data.push(item.value);
-              }
-            }
-            formData[name] = data.join(', ');
-          }
-        });
-
-        // add form-specific values into the data
-        formData.formDataNameOrder = JSON.stringify(fields);
-        formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
-        formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
-
-        return { data: formData, honeypot: honeypot };
-      }
-
-      function handleFormSubmit(event) {
-        // handles form submit without any jquery
-        event.preventDefault(); // we are submitting via xhr below
-        var form = event.target;
-        var formData = getFormData(form);
-        var data = formData.data;
-
-        // If a honeypot field is filled, assume it was done so by a spam bot.
-        if (formData.honeypot) {
-          return false;
-        }
-
-        disableAllButtons(form);
-        var url = form.action;
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", url);
-        // xhr.withCredentials = true;
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            form.reset();
-            var formElements = form.querySelector(".form-elements");
-            if (formElements) {
-              formElements.style.display = "none"; // hide form
-            }
-            var thankYouMessage = form.querySelector(".thankyou_message");
-            if (thankYouMessage) {
-              thankYouMessage.style.display = "block";
-              alert("메일 전송에 성공했습니다. 확인 후 회신드리겠습니다.");
-            }
-          }
-        };
-        // url encode form data for sending as post data
-        var encoded = Object.keys(data)
-          .map(function (k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-          })
-          .join("&");
-        xhr.send(encoded);
-      }
-
-      function loaded() {
-        // bind to the submit event of our form
-        var forms = document.querySelectorAll("form.gform");
-        for (var i = 0; i < forms.length; i++) {
-          forms[i].addEventListener("submit", handleFormSubmit, false);
-        }
-      }
-      document.addEventListener("DOMContentLoaded", loaded, false);
-
-      function disableAllButtons(form) {
-        var buttons = form.querySelectorAll("button");
-        for (var i = 0; i < buttons.length; i++) {
-          buttons[i].disabled = true;
-        }
-      }
-    })();
-  </script>
-
-
-
-  </div>
-  </div>
-  </div>
-
-  <div style="display:none" class="thankyou_message">
-    <h2><em>Thanks</em> for contacting us! We will get back to you soon!</h2>
-  </div>
-
-  </form>
-  </div>
   </section>
 
   <!-- Footer Section -->
@@ -243,6 +119,8 @@
     <p>&copy; 2023 VESPER. All rights reserved.</p>
   </footer>
 
+  <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js">
+  </script>
 </body>
 
 </html>
