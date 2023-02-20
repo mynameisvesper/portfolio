@@ -192,7 +192,6 @@ section.projects {
     text-transform: uppercase;
     margin-top: 1rem;
     border-radius: 15px;
-
     transition: background-color 0.3s ease;
 }
 
@@ -233,22 +232,17 @@ section.projects {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-contact form #btnSubmit:hover {
-    background-color: #ffffff;
-    color: #343a40;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.contact form #btnSubmit:hover {
+
+    background-color: #0772b5;
 }
+
 
 .contact label {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #919090;
     text-align: center;
-}
-
-.contact input[type="submit"]:hover {
-    background-color: #b5070f;
-    color: #fff;
 }
 
 .contact input {
@@ -273,21 +267,6 @@ contact form #btnSubmit:hover {
     resize: none;
 }
 
-.contact input[type="submit"] {
-    margin-top: 1rem;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-}
-
-.contact input[type="submit"]:hover {
-    background-color: #b5070f;
-}
-
 .contact .form-group {
     margin-bottom: 1rem;
 }
@@ -298,25 +277,6 @@ contact form #btnSubmit:hover {
     font-size: 1.2rem;
     color: #ff0000;
     text-align: left;
-}
-
-.btn-submit {
-    display: block;
-    background-color: #e50914;
-    color: #ffffff;
-    padding: 1rem 6rem;
-    border-radius: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 2rem;
-    border-radius: 20px;
-
-    transition: background-color 0.3s ease;
-}
-
-.btn-submit:hover {
-    background-color: #0772b5 !important;
-    color: #fff !important;
 }
 
 @media (max-width: 767px) {
@@ -338,6 +298,9 @@ contact form #btnSubmit:hover {
     body {
         font-size: 16px;
       }
+      .contact {
+    height: auto;
+  }
     
 }
 
