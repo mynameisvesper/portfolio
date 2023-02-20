@@ -55,12 +55,12 @@
     var form = event.target;
     var formData = getFormData(form);
     var data = formData.data;
-
+  
     // If a honeypot field is filled, assume it was done so by a spam bot.
     if (formData.honeypot) {
       return false;
     }
-
+  
     disableAllButtons(form);
     var url = form.action;
     var xhr = new XMLHttpRequest();
@@ -77,6 +77,8 @@
           var thankYouMessage = form.querySelector(".thankyou_message");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";
+            var submitButton = form.querySelector("button[type='submit']");
+            submitButton.disabled = true; // disable submit button
           }
         }
     };
